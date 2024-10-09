@@ -35,7 +35,12 @@
         <localInspection
                 language="JAVA"
                 implementationClass="me.hang.elegant.coding.inspection.ConstantNamingInspection"
-                defaultEnabled="true" />
+                defaultEnabled="true"
+                level="WARNING"
+                enabledByDefault="true"
+                groupPath="Elegant Coding Guide"
+                groupName="Constant"
+                displayName="Constant Naming Inspection" />
 
         <applicationConfigurable instance="me.hang.elegant.coding.config.MainConfigurable"
                                  displayName="Elegant Coding Guide"
@@ -43,10 +48,10 @@
     </extensions>
 
     <actions>
-        <action id="me.hang.elegant.coding.HelloWorldAction"
-                class="me.hang.elegant.coding.HelloWorldAction"
-                text="Say Hello"
-                description="Displays a Hello, World message">
+        <action id="me.hang.elegant.coding.action.ElegantCodingGuideAction"
+                class="me.hang.elegant.coding.action.ElegantCodingGuideAction"
+                text="Elegant Coding Guide"
+                description="Get more information on Github">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
     </actions>

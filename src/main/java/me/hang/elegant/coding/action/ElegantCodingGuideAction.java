@@ -1,4 +1,4 @@
-package me.hang.elegant.coding;
+package me.hang.elegant.coding.action;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -8,11 +8,10 @@ import com.intellij.openapi.ui.Messages;
  * @Author hang.wang
  * @Date 2024/10/8 18:03
  */
-public class HelloWorldAction extends AnAction {
+public class ElegantCodingGuideAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        // 显示一个 "Hello, World!" 的对话框
-        Messages.showMessageDialog("Hello, world!", "Greeting", Messages.getInformationIcon());
+        Messages.showMessageDialog("https://github.com/H4ngZz/elegant-coding-guide", "Get more information on Github", Messages.getInformationIcon());
     }
 }

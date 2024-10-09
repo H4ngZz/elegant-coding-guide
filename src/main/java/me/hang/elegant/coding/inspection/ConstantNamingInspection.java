@@ -18,6 +18,11 @@ public class ConstantNamingInspection extends LocalInspectionTool {
 
     @Override
     public @NotNull String getDisplayName() {
-        return "ECG Constant Naming Convention";
+        return "ECG Constant Naming";
+    }
+
+    @Override
+    public boolean isEnabledByDefault() {
+        return true;
     }
 }
