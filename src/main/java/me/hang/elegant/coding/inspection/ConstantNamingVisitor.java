@@ -4,6 +4,7 @@ import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.psi.JavaElementVisitor;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiModifier;
+import me.hang.elegant.coding.bundle.I18nBundle;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -28,7 +29,7 @@ public class ConstantNamingVisitor extends JavaElementVisitor {
             String fieldName = field.getName();
 
             if (!fieldName.equals(fieldName.toUpperCase())) {
-                holder.registerProblem(field.getNameIdentifier(), "当定义常量时，变量名需要全部大写");
+                holder.registerProblem(field.getNameIdentifier(), I18nBundle.getMessage("inspection.constant.define"));
             }
         }
     }

@@ -1,35 +1,45 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
     <id>me.hang.elegant-coding-guide</id>
-
-    <!-- Public plugin name should be written in Title Case.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Elegant-Coding-Guide</name>
-
-    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="hang.wang003354@tongdun.net" url="https://www.tongdun.net">TongDun</vendor>
-
-    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
-         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <name>Elegant Coding Guide</name>
+    <vendor email="hang.wang003354@tongdun.net" url="https://hang.domcer.com/">Hang</vendor>
     <description><![CDATA[
-    Elegant-Coding-Guide<br>
-    <em>most HTML tags may be used</em>
-  ]]></description>
+    <em>Elegant-Coding-Guide</em><br><br>
 
-    <!-- Product and plugin compatibility requirements.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <strong>For English:</strong><br>
+    Standardize your code to enhance elegance and readability! This plugin helps you achieve that by providing the following benefits:<br>
+    <ol>
+        <li><strong>Improved Readability:</strong> A well-defined code style makes your code easier to read and understand.</li>
+        <li><strong>Consistency:</strong> Maintaining a consistent coding style helps you and your team to work together more effectively.</li>
+        <li><strong>Future-Proofing:</strong> Establishing coding standards now will save you time and effort during future updates and maintenance.</li>
+        <li><strong>Detail-Oriented:</strong> A polished code style reflects attention to detail, which is essential for long-term success.</li>
+        <li><strong>Reduced Complexity:</strong> Inconsistent code can lead to increased complexity, making maintenance more challenging.</li>
+    </ol>
+    Remember, while initial code development may be low-cost, significant investment is required for updates and maintenance in the future.<br><br>
+
+    <strong>For Chinese:</strong><br>
+    规范代码，让你的代码更加优雅！本插件帮助您实现以下目标：<br>
+    <ol>
+        <li><strong>提高可读性：</strong>明确的代码风格使代码更易于阅读和理解。</li>
+        <li><strong>保持一致性：</strong>维护一致的编码风格有助于您和团队更有效地协作。</li>
+        <li><strong>未来适应性：</strong>现在建立编码标准可以在未来的更新和维护中节省时间和精力。</li>
+        <li><strong>关注细节：</strong>精致的代码风格体现了对细节的关注，这是长期成功的关键。</li>
+        <li><strong>减少复杂性：</strong>不一致的代码会导致复杂性增加，从而使维护变得更加困难。</li>
+    </ol>
+    请记住，尽管初期开发成本较低，但后期的更新和维护往往需要投入大量的成本。<br>
+]]></description>
+
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
 
-    <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <localInspection
                 language="JAVA"
                 implementationClass="me.hang.elegant.coding.inspection.ConstantNamingInspection"
                 defaultEnabled="true" />
+
+        <applicationConfigurable instance="me.hang.elegant.coding.config.MainConfigurable"
+                                 displayName="Elegant Coding Guide"
+                                 groupId="appearance"/>
     </extensions>
 
     <actions>
@@ -40,4 +50,6 @@
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
     </actions>
+
+    <resource-bundle>messages</resource-bundle>
 </idea-plugin>
